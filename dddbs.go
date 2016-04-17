@@ -6,7 +6,7 @@ import (
 )
 
 type DataBase struct {
-	raw map[string]string
+	raw      map[string]string
 	inverted map[rune][]string
 }
 
@@ -53,7 +53,7 @@ func (db DataBase) SearchSingleQuery(query string) (found Result) {
 	}
 
 	for k, v := range found {
-		if v < len(queryRunes) - 1 || !strings.Contains(db.raw[k], query) {
+		if v < len(queryRunes)-1 || !strings.Contains(db.raw[k], query) {
 			delete(found, k)
 		}
 	}
@@ -73,7 +73,7 @@ func (db DataBase) Search(query string) (found Result) {
 }
 
 type ResultEntry struct {
-	Key string
+	Key   string
 	Score int
 }
 

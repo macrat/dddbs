@@ -10,7 +10,6 @@ func TestSearch(t *testing.T) {
 	db.Add("0 hoge", "hello world")
 	db.Add("1 fuga", "welcome to world world")
 
-
 	r := db.Search("world").Sort()
 	if len(r) != 2 {
 		t.Error("Invalid number of entries in result of \"world\"")
@@ -23,7 +22,6 @@ func TestSearch(t *testing.T) {
 	if len(r) >= 2 && r[1].Key != "0 hoge" {
 		t.Error("Second entry expected hoge but got " + r[1].Key)
 	}
-
 
 	r = db.Search("hello").Sort()
 	if len(r) != 1 {
@@ -40,7 +38,6 @@ func TestJapaneseSearch(t *testing.T) {
 
 	db.Add("0 日本語", "これは日本語です")
 	db.Add("1 テスト", "こいつは日本語だ")
-
 
 	r := db.Search("日本語").Sort()
 	if len(r) != 2 {
