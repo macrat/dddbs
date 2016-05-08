@@ -55,6 +55,8 @@ func (db DataBase) SearchSingleQuery(query string) (found Result) {
 	for k, v := range found {
 		if v < len(queryRunes)-1 || !strings.Contains(db.raw[k], query) {
 			delete(found, k)
+		} else {
+			found[k] = strings.Count(db.raw[k], query)
 		}
 	}
 
@@ -103,6 +105,6 @@ func (sr SortedResult) Less(i, j int) bool {
 	if sr[i].Score != sr[j].Score {
 		return sr[i].Score < sr[j].Score
 	} else {
-		return sr[i].Key > sr[j].Key
+		return sr[i].Key < sr[j].Key
 	}
 }
