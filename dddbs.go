@@ -25,6 +25,10 @@ func (db DataBase) Add(key, value string) {
 	db.raw[key] = value
 }
 
+func (db DataBase) Get(key string) string {
+	return db.raw[key]
+}
+
 type Result map[string]int
 
 func (result Result) And(target map[string]int) (and Result) {
