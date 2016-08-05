@@ -109,6 +109,6 @@ func (sr SortedResult) Less(i, j int) bool {
 	if sr[i].Score != sr[j].Score {
 		return sr[i].Score < sr[j].Score
 	} else {
-		return sr[i].Key < sr[j].Key
+		return sr[i].Key > sr[j].Key
 	}
 }
