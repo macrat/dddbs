@@ -8,6 +8,8 @@ golangで書かれたインメモリの全文検索エンジン(笑)。
 
 ユニグラムの転置データベースを使って絞り込んで、順次走査で更に絞り込む。
 
+[![Build Status](https://travis-ci.org/macrat/dddbs.svg?branch=master)](https://travis-ci.org/macrat/dddbs)
+
 ## 使い方
 ### 簡単な使い方
 なんとなく以下のような感じで使います。
